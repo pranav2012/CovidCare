@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <link rel="icon" href="/favicon.ico" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css"/>
                 </Head>
                 <body>
                     <Main />

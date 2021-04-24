@@ -1,12 +1,17 @@
 import Head from 'next/head';
+import Dashboard from './dashboard';
+import Header from './header';
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>CovidCare</title>
       </Head>
-      
-    </div>
+      <div>
+        <Header/>
+        <Dashboard/>
+      </div>
+    </>
   )
 }
