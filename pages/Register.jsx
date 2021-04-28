@@ -1,4 +1,5 @@
-import React from 'react'
+import Head from 'next/head';
+import Header from '../components/header';
 import { Form, Message } from 'semantic-ui-react'
 
 const options = [
@@ -11,7 +12,12 @@ const options = [
 export default function Register() {
 
   return (
-    <div className="min-h-screen flex bg-gray-50 justify-center items-center">
+    <>
+      <Head>
+          <title>CovidCare</title>
+      </Head>
+      <Header/>
+      <div className="min-h-screen flex bg-gray-50 justify-center items-center">
       <div className="w-3/5 p-5 m-6 bg-white rounded shadow-lg">
         <Form>
           <h1 className="gray-600 text-3xl my-6 text-center font-bold">Register Yourself</h1>
@@ -75,5 +81,6 @@ export default function Register() {
         </Form>
       </div>
     </div>
+    </>
   )
 }

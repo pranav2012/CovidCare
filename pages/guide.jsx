@@ -1,7 +1,14 @@
+import Head from 'next/head';
+import Header from '../components/header';
+
 export default function guide() {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Head>
+                <title>CovidCare</title>
+            </Head>
+            <Header/>
+            <div></div>
+        </>
     )
 }
