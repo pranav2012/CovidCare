@@ -26,8 +26,8 @@ const items = [
         description=''
     />,
     <Card
-        href='/details?id=remdesivir'
-        header='Check Remdesivir'
+        href='/details?id=medicines'
+        header='Essential Medicines Available'
         meta='Friend'
         description=''
     />

@@ -28,8 +28,8 @@ export default function Header() {
               <Link href="/details?id=plasma">
                 <a onClick={()=>setclicked(false)} className="text-white block mt-10 sm:mt-4 lg:mt-0 font-semibold mr-5 text-md">Plasma</a>
               </Link>
-              <Link href="/details?id=remdesivir">
-                <a onClick={()=>setclicked(false)} className="text-white block mt-10 sm:mt-4 lg:mt-0 font-semibold mr-5 text-md">Remdesivir</a>
+              <Link href="/details?id=medicines">
+                <a onClick={()=>setclicked(false)} className="text-white block mt-10 sm:mt-4 lg:mt-0 font-semibold mr-5 text-md">Essential Medicines</a>
               </Link>
               <Link href="/guide">
                 <a onClick={()=>setclicked(false)} className="text-white block mt-10 sm:mt-4 lg:mt-0 font-semibold mr-5 text-md">Guide</a>
