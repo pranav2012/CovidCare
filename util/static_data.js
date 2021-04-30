@@ -1,9 +1,39 @@
+import { Card } from 'semantic-ui-react'
+
+export const items = [
+    <Card
+        href='/details?id=oxygen'
+        header='Check Oxygen Supply'
+        meta='Near You'
+        description=''
+    />,
+    <Card
+        href='/details?id=beds'
+        header='Check Beds'
+        meta='Friend'
+        description=''
+    />,
+    <Card
+        href='/details?id=plasma'
+        header='Check Plasma'
+        meta='Friend'
+        description=''
+    />,
+    <Card
+        href='/details?id=medicines'
+        header='Essential Medicines Available'
+        meta='Friend'
+        description=''
+    />
+];
+
 export const helpoptions = [
     { key: 'b', text: 'Beds', value: 'beds' },
     { key: 'o', text: 'Oxygen', value: 'oxygen' },
     { key: 'p', text: 'Plasma', value: 'plasma' },
     { key: 'p', text: 'Essential Medicines', value: 'medicines' },
 ];
+
   
 export const bloodoptions = [
     { key: 0, text: 'A+', value: 'A+' },

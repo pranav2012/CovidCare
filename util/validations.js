@@ -79,5 +79,35 @@ export const regformvalidation = Yup.object().shape({
 })
 
 export const reqformvalidation = Yup.object().shape({
+    firstname: Yup.string()
+        .trim()
+        .matches(/^[a-z A-Z]+$/, "Invalid name "),
+    lastname: Yup.string()
+        .trim()
+        .matches(/^[a-z A-Z]+$/, "Invalid name "),
+    email: Yup.string()
+        .trim()
+        .email("Not a valid email address")
+        .required("Required"),
+    phone: Yup.string()
+        .required("Required")
+        .matches(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/, "Invalid number"),
+    city: Yup.string()
+        .trim()
+        .required("Required"),
+    district: Yup.string()
+        .trim()
+        .required("Required"),
+    supply: Yup.string()
+        .trim()
+        .required("Required"),
+    bloodgroup: Yup.string()
+        .trim()
+        .required("Required"),  
+    medname: Yup.string()
+        .trim()
+        .required("Required"),
+    istrue: Yup.bool()
+        .required("Required"),
 
 })

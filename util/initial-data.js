@@ -28,5 +28,14 @@ export const regformvalues = {
 }
 
 export const reqformvalues = {
-
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    city: "",
+    district: "",
+    supply: "",
+    bloodgroup: "",
+    medname: "",
+    istrue: false,
 }

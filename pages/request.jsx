@@ -1,30 +1,32 @@
 import Head from 'next/head';
 import Header from '../components/header';
 import { Button } from "semantic-ui-react";
-import { useRouter } from 'next/router';
 import { Icon } from 'semantic-ui-react';
+import RequestForm from '../components/reqform';
+import { useState } from 'react';
 
+export default function request({data}) {
 
-export default function Details({ data, supply }) {
-
-    const router = useRouter();
+    const [isopen, setisopen] = useState(false);
 
     return (
         <>
             <Head>
                 <title>CovidCare</title>
             </Head>
-            <Header />
-            <div className="min-h-screen bg-gray-50">
-                {(supply === "oxygen" || supply === "beds" || supply === "plasma" || supply === "medicines") ? <div className="mx-auto w-11/12">
-                    <h1 className="ml-20 text-4xl text-gray-600 py-6 font-bold">Get {supply.charAt(0).toUpperCase() + supply.slice(1)} Details</h1>
+            <Header/>
+            <div className="relative min-h-screen bg-gray-50">
+                <RequestForm isopen={isopen} setisopen={setisopen}/>
+                <div className="absolute top-8 right-32"><Button onClick={()=>setisopen(true)} size="mini" color="blue">Make a Request</Button></div>
+                {true ? <div className="mx-auto w-11/12">
+                    <h1 className="ml-20 text-4xl text-gray-600 py-6 font-bold">Requests Made</h1>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                         {data.map((val, id) => {
                             return (
-                                <div key={id} className=" mx-auto overflow-hidden bg-white flex flex-col justify-around items-center shadow h-80 w-72 px-5 p-4 m-3 rounded-md">
+                                <div key={id} className=" mx-auto overflow-hidden bg-white flex flex-col justify-around items-center shadow h-96 w-80 px-5 p-4 m-3 rounded-md">
                                     <div className="w-11/12">
                                         <h2 className="truncate w-full text-xl text-gray-600 font-semibold">{val.title}</h2>
-                                        <p className="text-md text-blue-400">{`Pranav helping with ${supply}`}</p>
+                                        <p className="text-md text-blue-400">{`Pranav needs help in oxygen`}</p>
                                         <p className="text-sm text-gray-500 mt-5">{`New Delhi, India`}</p>
                                     </div>
                                     <div className="flex-2 flex flex-col justify-around w-full px-3 h-1/2">
@@ -58,7 +60,6 @@ export default function Details({ data, supply }) {
 }
 
 export async function getServerSideProps({ query }) {
-    const id = query.id;
     let response = await fetch(`https://jsonplaceholder.typicode.com/todos`)
     // ,{
     //     method: 'POST',
@@ -72,7 +73,6 @@ export async function getServerSideProps({ query }) {
     return {
         props: {
             data: data,
-            supply: id
         }
     }
 }

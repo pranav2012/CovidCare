@@ -15,6 +15,45 @@ a {
   text-decoration: none;
 }
 
+.overlay{
+  pointer-events: none;
+  background-color: rgba(119, 118, 118, 0.37);
+  opacity: 0;
+}
+
+.overlay.active{
+  pointer-events: all;
+  opacity: 1;
+}
+
+.floatbox{
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  height: 500px;
+  z-index: 20;
+ }
+
 * {
   box-sizing: border-box;
+}
+
+.h-300{
+  height: 300px;
+}
+
+.w-400{
+  width: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+  .h-300{
+    height: 220px;
+  }
+  
+  .w-400{
+    width: 300px;
+  }
 }
